@@ -1,10 +1,12 @@
 <?php
 session_start();
 require ("./config.php");
+$params = $_POST;
 
-$id = $_GET['id'];
+$user_id = trim($_POST['user_id']);
+$password = md5(trim($_POST['password']));
 
-$findSql = "SELECT * FROM users WHERE id = '$id'";
+$findSql = "SELECT * FROM users WHERE user_id = '$user_id' AND password = '$password'";
 $result = mysqli_query($conn,$findSql);
 
 if (mysqli_num_rows($result)) {
@@ -22,7 +24,15 @@ if (mysqli_num_rows($result)) {
     setCookie('role',$info['role'],time()+3600);
     setCookie('user_id',$info['user_id'],time()+3600);
 
-    echo '<script>location.href="home.php";</script>';
+
+    if ($info['user_id'] == 'admin') {
+
+        echo '<script>alert("login success!");location.href="../admin/doLogin.php?id='.$info['id'].'";</script>';
+    } else {
+        echo '<script>alert("login success!");location.href="home.php";</script>';
+    }
+
 } else {
-    echo '<script>location.href="home.php";</script>';
+
+    echo '<script>alert("login error!");location.href="home.php";</script>';
 }

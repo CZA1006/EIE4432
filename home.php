@@ -41,9 +41,7 @@
 <div class="main">
     <?php
         include_once("./base.php");
-
         if (!isset($_COOKIE['user_id'])) {
-
             echo "<script>alert('Please login');location.href='login.php';</script>";die;
         }
     ?>
@@ -76,9 +74,9 @@
                         <label for="phone">Phone Number</label>
                         <input readonly type="tel" class="link" style="color:#fff;padding-top: 5px;" id="phone" name="phone" value="<?php echo isset($_COOKIE['phone']) ? $_COOKIE['phone'] : '' ?>"/>
                     </div>
-<!--                    <button class="btnn" style="width: 600px; margin-top: 40px;">-->
-<!--                        <a href="updateUsers.php">go to update personal infos</a >-->
-<!--                    </button>-->
+                    <button class="btnn" style="width: 600px; margin-top: 40px;">
+                        <a href="updateUsers.php">go to update personal infos</a >
+                    </button>
                 </form>
             </div>
             <div style="width:200px;float:left;">

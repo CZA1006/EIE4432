@@ -46,8 +46,8 @@
         if (!isset($_COOKIE['id'])) {
             echo "<script>location.href='login.php';</script>";
         }
-        $user_id = $_GET['user_id'];
-        $sql = "SELECT * FROM  `notices` WHERE `user_id` = '$user_id' ORDER BY   `date_time` DESC ";
+        $user_id = $_COOKIE['id'];
+        $sql = "SELECT * FROM  `notices` WHERE `user_id` = '$user_id' OR `state` = 'Completed'  ORDER BY   `date_time` DESC ";
         $result = mysqli_query($conn, $sql);
 
         ?>

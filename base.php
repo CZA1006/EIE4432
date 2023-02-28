@@ -16,6 +16,7 @@
         color:#00f7ff;
     }
 
+
 </style>
 <div class="navbar">
     <div class="icon">
@@ -26,14 +27,13 @@
         <ul>
             <li><a href="home.php">HOME</a></li>
             <li><a href="login.php">ABOUT</a></li>
-            <li><a href="reglist.php">Registration List</a></li>
-            <li><a href="undetermined.php">Undetermined</a></li>
-            <li><a href="completed.php">Completed</a></li>
-            <li><a href="census.php">Census</a></li>
+            <li><a href="lost.php">LOST</a></li>
+            <li><a href="found.php">FIND</a></li>
+            <li><a href="contact.php">CONTACT</a></li>
         </ul>
     </div>
 
-    <!--需要改为message板块-->
+
 
     <div class="search" style="line-height:90px;height:90px;margin-top:15px">
 
@@ -47,7 +47,7 @@
 
             if ($img) {
                 ?>
-                 <div id="img1">
+                <div id="img1">
                     <img style="float:left;width:50px;height:100%;border-radius: 50px;" class="img-logo" src="../<?php echo $img; ?>" />
 
                 </div>
@@ -57,14 +57,14 @@
                     <div >
                         <div class="dropdown-content">
                             <div>
-                                <a href="./home.php" style="text-decoration: none;">Personal center</a>
+                                <a  href="./home.php" style="text-decoration: none;">Personal center</a>
                             </div>
-<!--                            <div>-->
-<!--                                <a href="./viewMyNotice.php" style="text-decoration: none;">View my notice</a>-->
-<!--                            </div>-->
-<!--                            <div>-->
-<!--                                <a href="./createNotice.php" style="text-decoration: none;">Create notice</a>-->
-<!--                            </div>-->
+                            <div>
+                                <a href="./viewMyNotice.php" style="text-decoration: none;">View my notice</a>
+                            </div>
+                            <div>
+                                <a href="./createNotice.php" style="text-decoration: none;">Create notice</a>
+                            </div>
                             <div>
                                 <a href="./signOut.php" style="text-decoration: none;">Sign out</a>
                             </div>
@@ -82,7 +82,5 @@
             ?>
 
         </div>
-        <!--            <input class="srch" type="search" name="" placeholder="Type To text">-->
-        <!--            <a href="#"><button class="btn">Search</button></a>-->
     </div>
 </div>
